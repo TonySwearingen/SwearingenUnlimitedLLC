@@ -4,11 +4,11 @@ Guest.destroy_all
 puts "Destroyed all 🗑"
 
 puts "Creating Users 🤩"
-u1 = User.create(name: 'Tony')
-u2 = User.create(name: 'Nicki')
-u3 = User.create(name: 'Freedom')
-u4 = User.create(name: 'Autumn')
-u5 = User.create(name: 'TJ')
+u1 = User.create(username: 'Tony')
+u2 = User.create(username: 'Nicki')
+u3 = User.create(username: 'Freedom')
+u4 = User.create(username: 'Autumn')
+u5 = User.create(username: 'TJ')
 
 puts "Creating Projects 📝"
 Project.create(name: 'Swearingen Unlimited LLC', date: "4/26/2022", user_id: u1.id)
