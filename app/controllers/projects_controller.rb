@@ -36,7 +36,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_record
   end
 
   def project_params
-    params.permit(:name, :date, :user_id)
+    params.permit(:name, :date, :user_id, :image)
   end
 
   def render_not_found
