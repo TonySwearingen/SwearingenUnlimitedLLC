@@ -11,11 +11,12 @@ u4 = User.create(name: 'Autumn', username: 'Autumn', email: '', password: '1234A
 u5 = User.create(name: 'TJ', username: 'TJ', email: '', password: '1234TJ@@', password_confirmation: '1234TJ@@', manager: false)
 
 puts "Creating Projects 📝"
-Project.create(name: 'Swearingen Unlimited LLC', date: "4/26/2022", user_id: u1.id)
-Project.create(name: 'Houses', date: "4/26/2022", user_id: u2.id)
-Project.create(name: 'Dogs', date: "4/26/2022", user_id: u3.id)
-Project.create(name: 'Cats', date: "4/26/2022", user_id: u4.id)
-Project.create(name: 'Snakes', date: "4/26/2022", user_id: u5.id)
+Project.create(name: 'Swearingen Unlimited LLC', date: "4/26/2022", user_id: u1.id, image: "")
+Project.create(name: 'Houses', date: "4/26/2022", user_id: u2.id, image: "")
+Project.create(name: 'Dogs', date: "4/26/2022", user_id: u3.id, image: "")
+Project.create(name: 'Cats', date: "4/26/2022", user_id: u4.id, image: "")
+Project.create(name: 'Snakes', date: "4/26/2022", user_id: u2.id, image: "")
+Project.create(name: 'Cars', date: "4/26/2022", user_id: u5.id,image: "")
 
 puts "Creating Guests 🥳"
 Guest.create(name: 'Antonio')
