@@ -4,7 +4,7 @@ Guest.destroy_all
 puts "Destroyed all 🗑"
 
 puts "Creating Users 🤩"
-u1 = User.create(name: 'Tony',username: 'Tony', email: 'unlimitedtony@gmail.com', password: '1234Tony@', password_confirmation: '1234Tony@', manager: true)
+u1 = User.create(name: 'Tony',username: 'Tony', email: 'unlimited1974@aol.com', password: '1234Tony@', password_confirmation: '1234Tony@', manager: true)
 u2 = User.create(name: 'Nicki', username: 'Nicki', email: 'chaoticchondro@gmail.com', password: '1234Nicki@', password_confirmation: '1234Nicki@', manager: false)
 u3 = User.create(name: 'Freedom',username: 'Freedom', email: '', password: '1234Freedom@', password_confirmation: '1234Freedom@', manager: true)
 u4 = User.create(name: 'Autumn', username: 'Autumn', email: '', password: '1234Autumn@', password_confirmation: '1234Autumn@', manager: false)

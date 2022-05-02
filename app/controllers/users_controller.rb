@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  wrap_parameters format: []
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_record
 
@@ -35,14 +36,14 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.permit(:name, :email, :password_digest, :username)
+    params.permit(:name, :email, :password_digest, :username, :manager)
   end
 
   def render_not_found
     render json: { error: "User not found"}, status: :not_found
   end
 
-  def render_invalid_record
-    render json: { errors: "validation errors"}, status: :unprocessable_entity
+  def render_invalid_record invalid
+    render json: { errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
   end
 end
