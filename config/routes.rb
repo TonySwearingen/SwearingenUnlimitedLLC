@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resources :guests, only: [:index]
   resources :projects
-  resources :users
+  resources :users, only: [:index, :show]
 end
