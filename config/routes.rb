@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  post '/login', to: 'sesssions#create'
-  post '/logout', to: 'sesssions#destroy'
+  post '/login', to: 'sesssions#login'
+  post '/logout', to: 'sesssions#logout'
   get '/me', to: 'users#me'
 
   resources :guests, only: [:index]
