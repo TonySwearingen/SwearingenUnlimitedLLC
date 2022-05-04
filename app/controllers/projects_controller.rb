@@ -1,7 +1,5 @@
 class ProjectsController < ApplicationController
   wrap_parameters format: []
-rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_record
 
   def index
     render json: Project.all
@@ -39,11 +37,4 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_invalid_record
     params.permit(:name, :date, :user_id, :image)
   end
 
-  def render_not_found
-    render json: { error: "Project not found"}, status: :not_found
-  end
-
-  def render_invalid_record invalid
-    render json: { errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
-  end
 end
