@@ -1,11 +1,11 @@
 import React from 'react';
-import Login from './Login'
+import User from './User';
+
 
 function Home() {
   return (
     <div>
-      Home
-      <Login />
+      <User />
     </div>
   )
 }

@@ -33,6 +33,13 @@ function Login() {
   {/* {currentUser.admin ? (
     <AdminPortal 
   )} */}
+  {/* <nav>
+        {!user ? 
+        <button as={Link} exact to="/login" onClick={handleLoginClick} >Login</button> 
+        :
+        <button variant="outline" onClick={handleLogoutClick}> Logout</button>
+        }
+      </nav> */}
   </>
   )
 }
