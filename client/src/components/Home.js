@@ -1,13 +1,12 @@
 import React from 'react';
-import User from './User';
 
 
 function Home() {
   return (
     <div>
-      <User />
+      Home Sweet Home
     </div>
   )
 }
 
-export default Home
+export default Home;

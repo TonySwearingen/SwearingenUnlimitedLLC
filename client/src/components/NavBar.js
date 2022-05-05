@@ -1,24 +1,57 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import User from './User';
-import Login from './Login';
-import Home from './Home';
-import { useState } from 'react';
-import { UserContext } from './UserContext';
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
 
-  const [currentUser, setCurrentUser] = useState({})
+  const linkStyles = {
+    display: "inline-block",
+    width: "70px",
+    padding: "12px",
+    margin: "0 6px 6px",
+    background: "blue",
+    textDecoration: "none",
+    color: "white",
+  };
+  
 
   return (
     <>
-      <UserContext.Provider value={{ currentUser, setCurrentUser }}>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/users" element={<User />} />
-          <Route exact path="/login" element={<Login />} />
-        </Routes>
-      </UserContext.Provider>
+      <NavLink
+        to="/Home"
+        style={linkStyles}
+      >
+        Home
+      </NavLink> 
+      <NavLink
+        to="/Tony"
+        style={linkStyles}
+      >
+        Tony
+      </NavLink >
+      <NavLink
+        to="/Nicki"
+        style={linkStyles}
+      >
+        Nicki
+      </NavLink >
+      <NavLink
+        to="/Freedom"
+        style={linkStyles}
+      >
+        Freedom
+      </NavLink >
+      <NavLink
+        to="/Autumn"
+        style={linkStyles}
+      >
+        Autumn
+      </NavLink >
+      <NavLink
+        to="/TJ"
+        style={linkStyles}
+      >
+        TJ
+      </NavLink >
     </>
   )
 }
