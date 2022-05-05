@@ -2,7 +2,9 @@ import React from 'react';
 
 function Freedom() {
   return (
-    <div>Freedom</div>
+    <div>
+      Future Software Engineer
+    </div>
   )
 }
 

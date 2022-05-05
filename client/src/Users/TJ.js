@@ -2,7 +2,9 @@ import React from 'react';
 
 function TJ() {
   return (
-    <div>TJ</div>
+    <div>
+      Future Jack of all Trades
+    </div>
   )
 }
 
