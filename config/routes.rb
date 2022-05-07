@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '/me', to: 'users#me'
 
   resources :guests, only: [:index]
-  resources :projects
+  resources :projects, only: [:show, :create, :update, :destroy]
   resources :users, only: [:index, :show]
 end

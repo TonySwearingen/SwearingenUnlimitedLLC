@@ -1,9 +1,9 @@
 class ProjectsController < ApplicationController
   wrap_parameters format: []
 
-  def index
-    render json: Project.all
-  end
+  # def index
+  #   render json: Project.all
+  # end
 
   def show
     projects = find_project
@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.permit(:name, :date, :user_id, :image)
+    params.permit(:name, :date, :user_id, images: [])
   end
 
 end
