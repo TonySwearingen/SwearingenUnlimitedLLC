@@ -17,10 +17,10 @@ function NavBar() {
   return (
     <>
       <NavLink
-        to="/Home"
+        to="/About"
         style={linkStyles}
       >
-        Home
+        About
       </NavLink> 
       <NavLink
         to="/Tony"

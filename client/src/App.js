@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import NavBar from './components/NavBar';
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
+import About from './components/About';
 import Tony from './Users/Tony';
 import Nicki from './Users/Nicki';
 import Freedom from './Users/Freedom';
@@ -12,13 +12,9 @@ import TJ from './Users/TJ';
 function App() {
   return (
     <div className="App">
-      <h2>Swearingen Unlimited LLC</h2>
-        <br/>
-        <br/>
-        <h2>By Tony J. Swearingen</h2>
         <NavBar />
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/About" element={<About />} />
           <Route path="/Tony" element={<Tony />} />
           <Route path="/Nicki" element={<Nicki />} />
           <Route path="/Freedom" element={<Freedom />} />
