@@ -1,6 +1,5 @@
 User.destroy_all
 Project.destroy_all
-Guest.destroy_all
 puts "Destroyed all 🗑"
 
 puts "Creating Users 🤩"
@@ -17,17 +16,5 @@ Project.create(name: 'Dogs', date: "4/26/2022", user_id: u3.id, image: "")
 Project.create(name: 'Cats', date: "4/26/2022", user_id: u4.id, image: "")
 Project.create(name: 'Snakes', date: "4/26/2022", user_id: u2.id, image: "")
 Project.create(name: 'Cars', date: "4/26/2022", user_id: u5.id,image: "")
-
-puts "Creating Guests 🥳"
-Guest.create(name: 'Antonio')
-Guest.create(name: 'Molly')
-Guest.create(name: 'Stephen')
-Guest.create(name: 'Chloe')
-Guest.create(name: 'Justin')
-Guest.create(name: 'Elizabeth')
-Guest.create(name: 'Tyler')
-Guest.create(name: 'Vi')
-Guest.create(name: 'Alex')
-Guest.create(name: 'Jane')
 
 puts "Done Seeding 🌱"
