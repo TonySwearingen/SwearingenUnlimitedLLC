@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     user = find_user
-    render json: user.projects
+    render json: user
   end
 
   def me
