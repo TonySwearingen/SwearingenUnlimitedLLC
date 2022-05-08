@@ -1,3 +1,3 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id, :name, :date
+  attributes :id, :name, :date, :image
 end
