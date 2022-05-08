@@ -48,25 +48,25 @@ function Nicki() {
       <br/>
       <br/>
       {displayProjects}
+      <br/>
+      <br/>
       <form onSubmit={handleSubmit}>
-        {/* <input className="nickis-project"
-        type="text"
-        id="nicki"
-        placeholder="Nicki's Project"
-        value={nickisProjects}
-        onChange={e => setNickisProjects(e.target.value)}
-      /> */}
-      <input className="nickis-images"
-        type="text"
-        id="nicki"
-        placeholder="Nicki's Images"
-        value={nickisImages}
-        onChange={e => setNickisImages(e.target.value)}
-      />
-      <button className="submit-btn" type="submit">Submit</button>
+
+        <input className="nickis-images"
+          type="text"
+          id="nicki"
+          placeholder="Nicki's Images"
+          value={nickisImages}
+          onChange={e => setNickisImages(e.target.value)}
+        />
+
+        <button className="submit-btn" type="submit">
+          Submit
+        </button>
+
       </form>
     </div>
-  )
+  );
 }
 
 export default Nicki;
