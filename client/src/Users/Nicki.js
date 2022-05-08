@@ -16,13 +16,13 @@ function Nicki() {
   ]
 
   useEffect(() => { 
-    fetch('/users/24')
+    fetch('/users/2')
       .then((res) => res.json())
       .then((data) => setNicki(data))
   }, [])
 
   useEffect(() => { 
-    fetch('/projects/25')
+    fetch('/projects/5')
       .then((res) => res.json())
       .then((data) => setNickisProjects(data))
   }, [])
@@ -33,7 +33,7 @@ function Nicki() {
 
     const imageData = {image: nickisImages}
 
-    fetch('/projects/25', {
+    fetch('/projects/5', {
       method: 'PATCH',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(imageData)
@@ -52,18 +52,23 @@ function Nicki() {
       <br/>
       <form onSubmit={handleSubmit}>
 
-        <input className="nickis-images"
+        {/* <input className="nickis-images"
           type="text"
           id="nicki"
           placeholder="Nicki's Images"
           value={nickisImages}
           onChange={e => setNickisImages(e.target.value)}
-        />
-
+        /> */}
+        <input
+          type="file"
+          accept=".jpeg,.png,.gif,.mov,.mp4"
+          name="files"
+          multiple
+          onChange={(e) => setNickisImages(e.target.files)}
+        ></input>
         <button className="submit-btn" type="submit">
           Submit
         </button>
-
       </form>
     </div>
   );
