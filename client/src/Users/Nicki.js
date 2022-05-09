@@ -15,14 +15,16 @@ function Nicki() {
     nicki.name
   ]
 
+  //useEffects
+
   useEffect(() => { 
-    fetch('/users/24')
+    fetch('/users/2')
       .then((res) => res.json())
       .then((data) => setNicki(data))
   }, [])
 
   useEffect(() => { 
-    fetch('/projects/25')
+    fetch('/projects/5')
       .then((res) => res.json())
       .then((data) => setNickisProjects(data))
   }, [])
@@ -33,13 +35,14 @@ function Nicki() {
 
     const imageData = {image: nickisImages}
 
-    fetch('/projects/25', {
-      method: 'PATCH',
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(imageData)
-    })
-    .then((res) => res.json())
-    .then((data) => setNickisImages(...nickisProjects, data))
+    setNickisImages("")
+      fetch('/projects/5', {
+        method: 'PATCH',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(imageData)
+      })
+      .then((res) => res.json())
+      .then((data) => setNickisProjects(...nickisProjects, data))
   }
 
   return (
