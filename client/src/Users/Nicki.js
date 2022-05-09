@@ -15,6 +15,8 @@ function Nicki() {
     nicki.name
   ]
 
+  //useEffects
+
   useEffect(() => { 
     fetch('/users/2')
       .then((res) => res.json())
@@ -51,14 +53,6 @@ function Nicki() {
       <br/>
       <br/>
       <form onSubmit={handleSubmit}>
-
-        {/* <input className="nickis-images"
-          type="text"
-          id="nicki"
-          placeholder="Nicki's Images"
-          value={nickisImages}
-          onChange={e => setNickisImages(e.target.value)}
-        /> */}
         <input
           type="file"
           accept=".jpeg,.png,.gif,.mov,.mp4"
