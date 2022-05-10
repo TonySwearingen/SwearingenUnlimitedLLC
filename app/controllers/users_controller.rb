@@ -5,10 +5,6 @@ class UsersController < ApplicationController
     render json: user
   end
 
-  # def me
-  #   render json: current_user
-  # end
-
   private
 
   def find_user

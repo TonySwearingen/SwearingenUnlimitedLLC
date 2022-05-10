@@ -23,13 +23,13 @@ function Nicki() {
   //useEffects
 
   useEffect(() => { 
-    fetch('/users/12')
+    fetch('/users/2')
       .then((res) => res.json())
       .then((data) => setNicki(data))
   }, [])
 
   useEffect(() => { 
-    fetch('/projects/10')
+    fetch('/projects/5')
       .then((res) => res.json())
       .then((data) => setNickisProjects(data))
   }, [])
@@ -41,7 +41,7 @@ function Nicki() {
     const formData = new FormData();
     formData.append('image', image);
 
-    fetch('/projects/10', {
+    fetch('/projects/5', {
       method: 'PATCH',
       body: formData
     })
