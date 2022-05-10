@@ -21,6 +21,7 @@ function App() {
           <Route path="/Autumn" element={<Autumn />} />
           <Route path="/TJ" element={<TJ />} />
         </Routes>
+        <img src="https://swearingenunlimited.com/wp-content/uploads/2021/11/FINAL.png" alt="Home" />
     </div>
   );
 }
