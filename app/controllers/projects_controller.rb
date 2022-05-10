@@ -7,7 +7,8 @@ class ProjectsController < ApplicationController
 
   def show
     projects = find_project
-    render json: projects
+    render json: projects, image_url: image(image)
+    
   end
 
   def create
@@ -34,7 +35,15 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.permit(:name, :date, :user_id, :image)
+    params.permit(:name, :date, :user_id, :id, :image)
+  end
+
+  def image(image)
+    if object.image.attached?
+      {
+        url: rails_blob_url(object.image)
+      }
+    end
   end
 
 end

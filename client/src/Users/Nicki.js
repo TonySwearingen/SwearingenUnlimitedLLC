@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
 
 function Nicki() {
 
   const [nicki, setNicki] = useState([]);
-  const [nickisProjects, setNickisProjects] = useState("");
-  const [nickisImages, setNickisImages] = useState("")
+  const [nickisProjects, setNickisProjects] = useState([]);
+  const [image, setImage] = useState(null)
+  const imageUpload = useRef()
 
+  
   const displayProjects = [
     nickisProjects.name,
     nickisProjects.image
   ]
+  
 
   const display = [
     nicki.name
@@ -33,15 +37,13 @@ function Nicki() {
   function handleSubmit(e) {
     e.preventDefault()
 
-    const imageData = {image: nickisImages}
+    const formData = new FormData();
+    formData.append('image', image);
 
     fetch('/projects/5', {
       method: 'PATCH',
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(imageData)
+      body: formData
     })
-    .then((res) => res.json())
-    .then((data) => setNickisImages(...nickisProjects, data))
   }
 
   return (
@@ -58,7 +60,8 @@ function Nicki() {
           accept=".jpeg,.png,.gif,.mov,.mp4"
           name="files"
           multiple
-          onChange={(e) => setNickisImages(e.target.files)}
+          onChange={(e) => setImage(e.target.files[0])}
+          ref={imageUpload}
         ></input>
         <button className="submit-btn" type="submit">
           Submit
