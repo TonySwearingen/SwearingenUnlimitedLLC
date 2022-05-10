@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   def update
     project = find_project
     project.update!(project_params)
-    render json: project, status: :created
+    render json: project
   end
 
   def destroy
@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.permit(:name, :date, :user_id, :id, :image)
+    params.permit(:name, :date, :user_id, :id, :images)
   end
 
   # def image(image)
