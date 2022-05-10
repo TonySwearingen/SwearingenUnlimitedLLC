@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+.home-logo {
+  height: 700px;
+  width: 700px;
+}
