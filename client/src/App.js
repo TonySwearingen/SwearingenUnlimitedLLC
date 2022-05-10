@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
         <Home />
-        <img src="https://swearingenunlimited.com/wp-content/uploads/2021/11/FINAL.png" alt="Home" />
+        <img className="home-logo" src="https://swearingenunlimited.com/wp-content/uploads/2021/11/FINAL.png" alt="Home" />
     </div>
   );
 }
