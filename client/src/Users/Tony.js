@@ -7,6 +7,10 @@ function Tony() {
       <br/>
       <br/>
       <h3>Retired Truck Driver turned Software Engineer</h3>
+      <br/>
+      <a className="social-media" target="_blank" rel="noopener noreferrer" href="https://github.com/TonySwearingen">My GitHub</a>
+      <br/>
+      <a className="social-media" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/tony-swearingen">My LinkedIn</a>
     </div>
   )
 }

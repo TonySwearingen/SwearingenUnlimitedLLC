@@ -7,15 +7,24 @@ function NavBar() {
     display: "inline-block",
     width: "70px",
     padding: "12px",
-    margin: "0 6px 6px",
+    justifyContent: "center",
+    margin: "50px 10px 10px",
     background: "blue",
     textDecoration: "none",
     color: "white",
+    fontWeight: "bold",
+    borderRadius: "25px",
   };
   
 
   return (
     <>
+      <NavLink
+        to="/"
+        style={linkStyles}
+      >
+        Home
+      </NavLink>
       <NavLink
         to="/About"
         style={linkStyles}
