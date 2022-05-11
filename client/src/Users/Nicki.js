@@ -5,8 +5,8 @@ import React, { useState, useEffect, useRef } from 'react';
 function Nicki() {
 
   const [nicki, setNicki] = useState([]);
-  const [nickisProjects, setNickisProjects] = useState([]);
-  const [image, setImage] = useState(null)
+  const [nickisProjects, setNickisProjects] = useState('');
+  const [images, setImages] = useState(null)
   const imageUpload = useRef()
 
   
@@ -31,7 +31,7 @@ function Nicki() {
   useEffect(() => { 
     fetch('/projects/5')
       .then((res) => res.json())
-      .then((data) => setNickisProjects(data))
+      .then((data) => setNickisProjects(data.images_url.url))
   }, [])
 
   // Functions
@@ -39,7 +39,7 @@ function Nicki() {
     e.preventDefault()
 
     const formData = new FormData();
-    formData.append('image', image);
+    formData.append('images', images);
 
     fetch('/projects/5', {
       method: 'PATCH',
@@ -61,12 +61,13 @@ function Nicki() {
           accept=".jpeg,.png,.gif,.mov,.mp4"
           name="files"
           multiple
-          onChange={(e) => setImage(e.target.files[0])}
+          onChange={(e) => setImages(e.target.files[0])}
           ref={imageUpload}
         ></input>
         <button className="submit-btn" type="submit">
           Submit
         </button>
+        <img className="image-1" src={setNickisProjects} alt="name" />
       </form>
     </div>
   );
