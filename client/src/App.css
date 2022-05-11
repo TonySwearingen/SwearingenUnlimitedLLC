@@ -1,5 +1,10 @@
+body {
+  background-color: #7868f16e
+}
+
 .App {
   text-align: center;
+  /* background-color: #7868f16e */
 }
 
 .App-logo {
@@ -14,7 +19,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #292d36;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,6 +47,12 @@
 }
 
 .snakes {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
+  border-radius: 25px
+}
+
+.social-media {
+  text-decoration: none;
+  font-weight: bold;
 }
