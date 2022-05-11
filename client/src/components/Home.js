@@ -7,6 +7,7 @@ import Nicki from '../Users/Nicki';
 import Freedom from '../Users/Freedom';
 import Autumn from '../Users/Autumn';
 import TJ from '../Users/TJ';
+import User from './User'
 
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
           <Route path="/Freedom" element={<Freedom />} />
           <Route path="/Autumn" element={<Autumn />} />
           <Route path="/TJ" element={<TJ />} />
+          <Route path="/User" element={<User />} />
         </Routes>
       
     </div>

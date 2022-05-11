@@ -61,6 +61,12 @@ function NavBar() {
       >
         TJ
       </NavLink >
+      <NavLink
+        to="/User"
+        style={linkStyles}
+      >
+        User
+      </NavLink >
     </>
   )
 }
