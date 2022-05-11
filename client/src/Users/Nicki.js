@@ -1,4 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect} from 'react';
+import NickisImages from './NickisImages';
+import apophis from '../Assets/apophis.jpg';
+import Blue from '../Assets/Blue.jpg';
+import DMRB from '../Assets/DMRB.jpg';
+import Ember from '../Assets/Ember.jpg';
+import Ember2 from '../Assets/Ember2.jpg';
+import Envy from '../Assets/Envy.jpg';
+import Valor from '../Assets/Valor.jpg';
+import Zenith from '../Assets/Zenith.jpg';
+import Zephyr from '../Assets/Zephyr.jpg';
+import Zephyr2 from '../Assets/Zephyr2.jpg';
 
 
 
@@ -6,69 +17,70 @@ function Nicki() {
 
   const [nicki, setNicki] = useState([]);
   const [nickisProjects, setNickisProjects] = useState('');
-  const [images, setImages] = useState(null)
-  const imageUpload = useRef()
+  // const [imagePath, setImagePath] = useState('');
 
   
-  const displayProjects = [
-    nickisProjects.name,
-    nickisProjects.images
-  ]
+  // const displayProjects = [
+  //   nickisProjects.name,
+  //   nickisProjects.images
+  // ]
   
 
-  const display = [
-    nicki.name
-  ]
+  // const display = [
+  //   nicki.name
+  // ]
 
   //useEffects
 
-  useEffect(() => { 
-    fetch('/users/2')
-      .then((res) => res.json())
-      .then((data) => setNicki(data))
-  }, [])
+  // useEffect(() => { 
+  //   fetch('/users/2')
+  //     .then((res) => res.json())
+  //     .then((data) => setNicki(data))
+  // }, [])
 
-  useEffect(() => { 
-    fetch('/projects/5')
-      .then((res) => res.json())
-      .then((data) => setNickisProjects(data.images_url.url))
-  }, [])
+  // useEffect(() => { 
+  //   fetch('/projects/5')
+  //     .then((res) => res.json())
+  //     .then((data) => setNickisProjects(data))
+  // }, [])
+  
+
+  // useEffect(() => {
+  //   fetch('/images/1')
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     console.log(data);
+  //     setImagePath(data.image_url.url)
+  //   })
+  // }, [])
 
   // Functions
-  function handleSubmit(e) {
-    e.preventDefault()
-
-    const formData = new FormData();
-    formData.append('images', images);
-
-    fetch('/projects/5', {
-      method: 'PATCH',
-      body: formData
-    })
-  }
+  
 
   return (
     <div>
-      {display}
+      {/* {display} */}
+      <h2>Digital Media Agency</h2>
+      <p>Under Construction</p>
       <br/>
       <br/>
-      {displayProjects}
+      {/* {displayProjects} */}
       <br/>
       <br/>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="file"
-          accept=".jpeg,.png,.gif,.mov,.mp4"
-          name="files"
-          multiple
-          onChange={(e) => setImages(e.target.files[0])}
-          ref={imageUpload}
-        ></input>
-        <button className="submit-btn" type="submit">
-          Submit
-        </button>
-        <img className="image-1" src={setNickisProjects} alt="name" />
-      </form>
+      <NickisImages />
+      <br/>
+      <br/>
+      <h2>Nicki's Reptile Collection</h2>
+      <img className='snakes' src={apophis} alt='nothing' />
+      <img className='snakes' src={Blue} alt='nothing' />
+      <img className='snakes' src={DMRB} alt='nothing' />
+      <img className='snakes' src={Ember} alt='nothing' />
+      <img className='snakes' src={Ember2} alt='nothing' />
+      <img className='snakes' src={Envy} alt='nothing' />
+      <img className='snakes' src={Valor} alt='nothing' />
+      <img className='snakes' src={Zenith} alt='nothing' />
+      <img className='snakes' src={Zephyr} alt='nothing' />
+      <img className='snakes' src={Zephyr2} alt='nothing' />
     </div>
   );
 }
