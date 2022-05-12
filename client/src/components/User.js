@@ -18,19 +18,19 @@ function User({ user, setUser }) {
   //   .then((user) => setUser(user))
   // }
 
-  // function handleLogoutClick(e) {
-  //   e.preventDefault();
-  //     fetch("/logout", { method: "DELETE" }).then((r) => {
-  //     if (r.ok) {
-  //         setUser(null);
-  //     }
-  //     });
-  // }
+  function handleLogoutClick(e) {
+    e.preventDefault();
+      fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+          setUser(null);
+      }
+      });
+  }
   
   return (
     <div>
-      {/* <form onSubmit={handleLogin}>
-        <input 
+      {/* <form onSubmit={handleLogin}> */}
+        {/* <input 
           type="text" 
           placeholder="Enter username" 
           value={username}
@@ -43,10 +43,10 @@ function User({ user, setUser }) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="submit-btn" type="submit" onChange={handleLogin}>Login</button>
-        <br/>
-        <button className="submit-btn" type="submit" onClick={handleLogoutClick}>Logout</button>
-      </form> */}
-      <Login user={user} setUser={setUser} />
+        <br/> */}
+        {/* </form> */}
+        <Login user={user} setUser={setUser} />
+      <button className="submit-btn" type="submit" onClick={handleLogoutClick}>Logout</button>
     </div>
   )
 }
