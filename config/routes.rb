@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  resources :projects, only: [:show, :create, :update, :destroy]
+
+  post '/signup' to: 'users#create'
   get '/me', to: 'users#show'
 
-  resources :projects, only: [:show, :create, :update, :destroy]
-  resources :users, only: [:index, :create, :show]
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
 end
