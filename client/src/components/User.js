@@ -1,23 +1,20 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
 function User({ user, setUser}) {
 
-  const history = useNavigate();
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
 
   function handleLogin(e) {
     e.preventDefault();
 
-    const formData = {
-      user
-    }
     fetch('/login', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(formData)
+      body: JSON.stringify({ username, password})
     })
     .then((res) => res.json())
-    .then((data) => setUser(data))
+    .then((user) => setUser(user))
   }
 
   function handleLogoutClick(e) {
@@ -25,7 +22,6 @@ function User({ user, setUser}) {
       fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
           setUser(null);
-          history.push("/")
       }
       });
   }
@@ -33,9 +29,20 @@ function User({ user, setUser}) {
   return (
     <div>
       <form onSubmit={handleLogin}>
-        <input type="text" placeholder="Enter username" />
-        <input type="text" placeholder="Enter password" />
-        <button className="submit-btn" type="submit" onChange={(e) => setUser(e.target.value)}>Login</button>
+        <input 
+          type="text" 
+          placeholder="Enter username" 
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input 
+          type="text" 
+          placeholder="Enter password" 
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button className="submit-btn" type="submit" onChange={handleLogin}>Login</button>
+        <br/>
         <button className="submit-btn" type="submit" onClick={handleLogoutClick}>Logout</button>
       </form>
       
