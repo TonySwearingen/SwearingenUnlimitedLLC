@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import NickisImages from './NickisImages';
 import apophis from '../Assets/apophis.jpg';
 import Blue from '../Assets/Blue.jpg';
@@ -15,8 +15,8 @@ import Zephyr2 from '../Assets/Zephyr2.jpg';
 
 function Nicki() {
 
-  const [nicki, setNicki] = useState([]);
-  const [nickisProjects, setNickisProjects] = useState('');
+  // const [nicki, setNicki] = useState([]);
+  // const [nickisProjects, setNickisProjects] = useState('');
   // const [imagePath, setImagePath] = useState('');
 
   

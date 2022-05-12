@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
 
   def show
-    user = find_user
-    render json: user
-  end
-
-  private
-
-  def find_user
-    User.find(params[:id])
+    if session[:user_id]
+      render json: User.find(session[:user_id]), status: :ok
+    else
+      render json: {error: "Not logged in"}, status: :unauthorized
+    end
   end
 end
