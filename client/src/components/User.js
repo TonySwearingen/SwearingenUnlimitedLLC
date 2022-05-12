@@ -1,8 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import { Button } from "../styles";
-
-
 
 function User({ user, setUser}) {
 
@@ -41,6 +38,7 @@ function User({ user, setUser}) {
         <button className="submit-btn" type="submit" onChange={(e) => setUser(e.target.value)}>Login</button>
         <button className="submit-btn" type="submit" onClick={handleLogoutClick}>Logout</button>
       </form>
+      
     </div>
   )
 }
