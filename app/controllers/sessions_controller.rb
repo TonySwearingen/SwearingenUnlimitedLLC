@@ -1,16 +1,20 @@
 class SessionsController < ApplicationController
-  def login
+  def create
     user = User.find_by(username: params[:username])
     if user&.authenticate(params[:password])
       session[:user_id]=user.id
-      render json: user
+      render json: user, status: :ok
     else 
-        render json: { errors: ["invalid username or password"]},status: :unauthorized
+        render json: { errors: ["Invalid username or password"]},status: :unauthorized
     end
   end
 
-  def logout
-    session.delete :user_id
-    head :no_content
+  def destroy
+    if session[:user_id]
+      session.delete(:user_id)
+      head :no_content
+    else
+      render json: {errors: ["No user to logout"]}, status: :unauthorized
+    end
   end
 end
