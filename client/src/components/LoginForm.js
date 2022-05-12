@@ -5,6 +5,7 @@ function LoginForm({ onLogin }) {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [user, setUser] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +20,7 @@ function LoginForm({ onLogin }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => {
-          onLogin(user);
+          setUser(user);
         console.log("logged in");
       })
       } else {
