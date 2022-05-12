@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import About from './About';
 import Tony from '../Users/Tony';
 import Nicki from '../Users/Nicki';
@@ -14,17 +14,17 @@ import Login from './Login'
 function Home() {
 
   const [user, setUser] = useState(null);
-  // const history = useNavigate();
+  const history = useNavigate();
 
-  // useEffect(() => {
-  //   // auto-login
-  //   fetch("/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => setUser(user));
-  //       history.push("/user")
-  //     };
-  //   });
-  // }, [history]);
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+        history.push("/user")
+      };
+    });
+  }, [history]);
 
   return (
     <div>
