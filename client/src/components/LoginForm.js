@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { Button, Error, Input, FormField, Label } from "../styles";
-import { useNavigate } from "react-router-dom";
 
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  const history = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +21,6 @@ function LoginForm({ onLogin }) {
         r.json().then((user) => {
           onLogin(user);
         console.log("logged in");
-        history.push("/")
       })
       } else {
         r.json().then((err) => setErrors(err.errors));
@@ -35,36 +30,40 @@ function LoginForm({ onLogin }) {
 
   return (
     <form onSubmit={handleSubmit} >
-      <FormField>
-        <Label htmlFor="username">Username</Label>
-        <Input
+      <>
+        
+        <input
           type="text"
           id="username"
+          placeholder="Username"
           autoComplete="off"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-      </FormField>
-      <FormField>
-        <Label htmlFor="password">Password</Label>
-        <Input
+      </>
+      <>
+        
+        <input
           type="password"
           id="password"
+          placeholder="Password"
           autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-      </FormField>
-      <FormField>
-        <Button variant="fill" color="primary" type="submit">
+      </>
+      <>
+        <button variant="fill" color="primary" type="submit">
           {isLoading ? "Loading..." : "Login"}
-        </Button>
-      </FormField>
-      <FormField>
+        </button>
+      </>
+      <>
         {errors.map((err) => (
-          <Error key={err}>{err}</Error>
+          <p key={err}>
+            {err}
+          </p>
         ))}
-      </FormField>
+      </>
     </form>
   );
 }

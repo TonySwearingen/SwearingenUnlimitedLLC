@@ -67,6 +67,12 @@ function NavBar() {
       >
         User
       </NavLink >
+      {/* <NavLink
+        to="/Login"
+        style={linkStyles}
+      >
+        Login
+      </NavLink > */}
     </>
   )
 }
