@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :projects, only: [:show, :create, :update, :destroy]
+  resources :projects
 
   # post '/signup' to: 'users#create'
   get '/me', to: 'users#show'

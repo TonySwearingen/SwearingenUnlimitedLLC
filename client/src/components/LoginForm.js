@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router';
 
-function LoginForm({ onLogin }) {
+function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState(null);
+
+  const history = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -22,6 +25,7 @@ function LoginForm({ onLogin }) {
         r.json().then((user) => {
           setUser(user);
         console.log("logged in");
+        history('/')
       })
       } else {
         r.json().then((err) => setErrors(err.errors));

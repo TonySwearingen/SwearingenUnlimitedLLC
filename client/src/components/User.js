@@ -1,5 +1,6 @@
 import React from "react";
-import Login from "./Login"
+import Login from "./Login";
+import { useNavigate } from 'react-router';
 
 function User({ user, setUser }) {
 
@@ -18,11 +19,14 @@ function User({ user, setUser }) {
   //   .then((user) => setUser(user))
   // }
 
+  const history = useNavigate()
+
   function handleLogoutClick(e) {
     e.preventDefault();
       fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
           setUser(null);
+        history('/')
       }
       });
   }

@@ -9,20 +9,22 @@ function Login({ onLogin }) {
     <div>
       {showLogin ? (
         <>
-          <LoginForm onLogin={onLogin} />
+          
           <p>
-            Don't have an account? &nbsp;
+            Not accepting new users at this time. &nbsp;
+            <br/>
             <button color="secondary" onClick={() => setShowLogin(false)}>
-              Sign Up
+              Log In
             </button>
           </p>
         </>
       ) : (
         <>
+        <LoginForm onLogin={onLogin} />
           <p>
-            Already have an account? &nbsp;
+            Go ahead Click it again!!! &nbsp;
             <button color="secondary" onClick={() => setShowLogin(true)}>
-              Log In
+              Click Bait
             </button>
           </p>
         </>
