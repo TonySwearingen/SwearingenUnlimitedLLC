@@ -1,6 +1,7 @@
 import React from "react";
 import Login from "./Login";
 import { useNavigate } from 'react-router';
+import Projects from './Projects';
 
 function User({ user, setUser }) {
 
@@ -49,8 +50,10 @@ function User({ user, setUser }) {
         <button className="submit-btn" type="submit" onChange={handleLogin}>Login</button>
         <br/> */}
         {/* </form> */}
+        
         <Login user={user} setUser={setUser} />
       <button className="submit-btn" type="submit" onClick={handleLogoutClick}>Logout</button>
+      <Projects />
     </div>
   )
 }
