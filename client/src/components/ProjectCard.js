@@ -2,7 +2,6 @@ import React from 'react';
 
 function ProjectCard({name, date, user,link}) {
 
-  console.log(name, user, date)
   return (
     <div>
       <p>{user.name}</p>

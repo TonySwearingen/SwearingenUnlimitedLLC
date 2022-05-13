@@ -10,52 +10,11 @@ import Valor from '../Assets/Valor.jpg';
 import Zenith from '../Assets/Zenith.jpg';
 import Zephyr from '../Assets/Zephyr.jpg';
 import Zephyr2 from '../Assets/Zephyr2.jpg';
+import ProjectForm from './ProjectForm';
 
 
 
 function Nicki() {
-
-  // const [nicki, setNicki] = useState([]);
-  // const [nickisProjects, setNickisProjects] = useState('');
-  // const [imagePath, setImagePath] = useState('');
-
-  
-  // const displayProjects = [
-  //   nickisProjects.name,
-  //   nickisProjects.images
-  // ]
-  
-
-  // const display = [
-  //   nicki.name
-  // ]
-
-  //useEffects
-
-  // useEffect(() => { 
-  //   fetch('/users/2')
-  //     .then((res) => res.json())
-  //     .then((data) => setNicki(data))
-  // }, [])
-
-  // useEffect(() => { 
-  //   fetch('/projects/5')
-  //     .then((res) => res.json())
-  //     .then((data) => setNickisProjects(data))
-  // }, [])
-  
-
-  // useEffect(() => {
-  //   fetch('/images/1')
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     console.log(data);
-  //     setImagePath(data.image_url.url)
-  //   })
-  // }, [])
-
-  // Functions
-  
 
   return (
     <div>
@@ -64,7 +23,7 @@ function Nicki() {
       <p>Under Construction</p>
       <br/>
       <br/>
-      {/* {displayProjects} */}
+      <ProjectForm />
       <br/>
       <br/>
       <NickisImages />
