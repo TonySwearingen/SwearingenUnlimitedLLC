@@ -4,6 +4,7 @@ function Tony({user}) {
 
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
+  const [link, setLink] = useState("");
   
 
   function handleProjectCreate(e) {
@@ -13,6 +14,7 @@ function Tony({user}) {
       name: name,
       date: date,
       user_id: user.id,
+      link: link,
     };
     fetch('/projects', {
       method: 'POST',
@@ -22,7 +24,8 @@ function Tony({user}) {
     .then((res) => res.json())
     .then(
       setName(""),
-      setDate("")
+      setDate(""),
+      setLink("")
     )
   }
 
@@ -49,6 +52,15 @@ function Tony({user}) {
             id="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="name">Link</label>
+          <input 
+            type="text"
+            id="link"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
           />
         </div>
         <button type="submit">Submit</button>

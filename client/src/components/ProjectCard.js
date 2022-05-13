@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProjectCard({name, date, user}) {
+function ProjectCard({name, date, user,link}) {
 
   console.log(name, user, date)
   return (
@@ -8,7 +8,9 @@ function ProjectCard({name, date, user}) {
       <p>{user.name}</p>
       <p>{name}</p>
       <p>{date}</p>
-      <a href="#">Links coming soon</a>
+      {link? <a href={link}>Link</a>
+      : 
+      <a href="#">Links coming soon</a>}
     </div>
   )
 }

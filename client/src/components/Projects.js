@@ -12,7 +12,7 @@ function Projects() {
   }, []);
 
 
-  const createProjectCards = projects.map((data) => <ProjectCard key={data.id} name={data.name} date={data.date} user={data.user} /> )
+  const createProjectCards = projects.map((data) => <ProjectCard key={data.id} name={data.name} date={data.date} user={data.user} link={data.link} /> )
 
   return (
 
