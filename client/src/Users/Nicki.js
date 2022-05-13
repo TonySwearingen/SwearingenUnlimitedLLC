@@ -14,7 +14,7 @@ import ProjectForm from './ProjectForm';
 
 
 
-function Nicki() {
+function Nicki({user}) {
 
   return (
     <div>
@@ -23,7 +23,7 @@ function Nicki() {
       <p>Under Construction</p>
       <br/>
       <br/>
-      <ProjectForm />
+      <ProjectForm user={user}/>
       <br/>
       <br/>
       {/* <NickisImages /> */}

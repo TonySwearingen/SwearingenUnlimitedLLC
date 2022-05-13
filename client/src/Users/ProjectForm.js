@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router';
 
 function ProjectForm({user}) {
 
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [link, setLink] = useState("");
+
+  const history = useNavigate()
 
   function handleProjectCreate(e) {
     e.preventDefault();
@@ -24,7 +27,8 @@ function ProjectForm({user}) {
     .then(
       setName(""),
       setDate(""),
-      setLink("")
+      setLink(""),
+      history('/projects')
     )
   }
 
