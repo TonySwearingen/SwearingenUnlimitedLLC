@@ -65,14 +65,14 @@ function NavBar() {
         to="/User"
         style={linkStyles}
       >
-        Projects
+        Login
       </NavLink >
-      {/* <NavLink
-        to="/Login"
+      <NavLink
+        to="/Projects"
         style={linkStyles}
       >
-        Login
-      </NavLink > */}
+        Projects
+      </NavLink >
     </>
   )
 }

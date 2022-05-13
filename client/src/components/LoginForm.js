@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router';
+// import { useNavigate } from 'react-router';
 
 function LoginForm() {
   const [username, setUsername] = useState("");
@@ -8,7 +8,7 @@ function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState(null);
 
-  const history = useNavigate()
+  // const history = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +25,7 @@ function LoginForm() {
         r.json().then((user) => {
           setUser(user);
         console.log("logged in");
-        history('/')
+        // history('/')
       })
       } else {
         r.json().then((err) => setErrors(err.errors));

@@ -50,7 +50,7 @@ function ProjectForm({user}) {
           />
         </div>
         <div>
-          <label htmlFor="name">Link</label>
+          <label htmlFor="name">Link URL</label>
           <input 
             type="text"
             id="link"

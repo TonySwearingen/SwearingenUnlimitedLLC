@@ -1,5 +1,5 @@
 import React from 'react';
-import NickisImages from './NickisImages';
+// import NickisImages from './NickisImages';
 import apophis from '../Assets/apophis.jpg';
 import Blue from '../Assets/Blue.jpg';
 import DMRB from '../Assets/DMRB.jpg';
@@ -26,7 +26,7 @@ function Nicki() {
       <ProjectForm />
       <br/>
       <br/>
-      <NickisImages />
+      {/* <NickisImages /> */}
       <br/>
       <br/>
       <h2>Nicki's Reptile Collection</h2>

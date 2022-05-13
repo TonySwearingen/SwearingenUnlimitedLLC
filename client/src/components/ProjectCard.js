@@ -7,7 +7,7 @@ function ProjectCard({name, date, user,link}) {
       <p>{user.name}</p>
       <p>{name}</p>
       <p>{date}</p>
-      {link? <a href={link}>Link</a>
+      {link? <a href={link}>Link URL</a>
       : 
       <a href="#">Links coming soon</a>}
     </div>

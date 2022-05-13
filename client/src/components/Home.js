@@ -8,7 +8,8 @@ import Freedom from '../Users/Freedom';
 import Autumn from '../Users/Autumn';
 import TJ from '../Users/TJ';
 import User from './User';
-import Login from './Login'
+import Login from './Login';
+import Projects from './Projects'
 
 
 
@@ -37,7 +38,7 @@ function Home() {
           <Route path="/TJ" element={<TJ user={user} setUser={setUser} />} />
           <Route path="/User" element={<User user={user} setUser={setUser}  />} />
           <Route exact path="/login" element={<Login onLogin={setUser} />} />
-        
+          <Route path="/Projects" element={<Projects user={user} setUser={setUser} />} />
         </Routes>
       
     </div>
