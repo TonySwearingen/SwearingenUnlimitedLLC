@@ -62,7 +62,7 @@ function ProjectForm({user}) {
             onChange={(e) => setLink(e.target.value)}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" onSubmit={history('/projects')}>Submit</button>
       </form>
     </div>
   )

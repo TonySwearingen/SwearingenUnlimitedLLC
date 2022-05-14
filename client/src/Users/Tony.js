@@ -1,11 +1,11 @@
 import React from 'react';
-import ProjectForm from './ProjectForm';
+// import ProjectForm from './ProjectForm';
 
 function Tony({user}) {
 
   return (
     <div>
-      <ProjectForm user={user} />
+      {/* <ProjectForm user={user} /> */}
       <br/>
       
       <h3>Projects</h3>
