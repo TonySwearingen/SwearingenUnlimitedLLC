@@ -31,11 +31,11 @@ function Home() {
       <NavBar />
         <Routes>
           <Route path="/About" element={<About />} />
-          <Route path="/Tony" element={<Tony user={user} setUser={setUser} />} />
-          <Route path="/Nicki" element={<Nicki user={user} setUser={setUser} />} />
-          <Route path="/Freedom" element={<Freedom user={user} setUser={setUser} />} />
-          <Route path="/Autumn" element={<Autumn user={user} setUser={setUser} />} />
-          <Route path="/TJ" element={<TJ user={user} setUser={setUser} />} />
+          <Route path="/Tony" element={<Tony  />} />
+          <Route path="/Nicki" element={<Nicki />} />
+          <Route path="/Freedom" element={<Freedom />} />
+          <Route path="/Autumn" element={<Autumn />} />
+          <Route path="/TJ" element={<TJ />} />
           <Route path="/User" element={<User user={user} setUser={setUser}  />} />
           <Route exact path="/login" element={<Login onLogin={setUser} />} />
           <Route path="/Projects" element={<Projects user={user} setUser={setUser} />} />

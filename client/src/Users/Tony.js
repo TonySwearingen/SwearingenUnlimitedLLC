@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+// import TonysCard from './TonysCard';
 // import ProjectForm from './ProjectForm';
 
-function Tony({user}) {
+function Tony() {
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    fetch('/users/4')
+    .then((res) => res.json())
+    .then((data) => setUser(data))
+  }, []);
+
+console.log(user)
+
+// const projectDisplay = user.projects.map((data) => <TonysCard key={data.id} name={data.name} date={data.date} link={data.link} />)
 
   return (
     <div>
@@ -10,7 +23,7 @@ function Tony({user}) {
       
       <h3>Projects</h3>
       <a className="social-media" target="_blank" rel="noopener noreferrer" href="https://github.com/TonySwearingen">My GitHub</a>
-      
+      {/* {projectDisplay} */}
       <br/>
       <h3>Social Media Links</h3>
       
