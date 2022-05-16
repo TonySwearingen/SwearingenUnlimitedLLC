@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   wrap_parameters format: []
-  skip_before_action :authorize, only: :index
+  skip_before_action :authorize, only: :index, :show
 
   def index
     render json: Project.all
