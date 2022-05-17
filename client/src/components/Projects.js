@@ -37,7 +37,7 @@ function Projects({user}) {
       setName(""),
       setDate(""),
       setLink(""),
-      history('/projects')
+      history(0)
     )
   }
 
@@ -51,10 +51,10 @@ function Projects({user}) {
   //   })
   // }
 
-  // function handleDelete(deletedProject) {
-  //   const updatedProjects = projects.filter(p => p.id !== deletedProject.id);
-  //   setProjects(updatedProjects)
-  // }
+  function handleDelete(deletedProject) {
+    const updatedProjects = projects.filter(p => p.id !== deletedProject.id);
+    setProjects(updatedProjects)
+  }
 
 
   const createProjectCards = projects.map((data) => <ProjectCard 
@@ -65,7 +65,8 @@ function Projects({user}) {
                                                       link={data.link} 
                                                       // onUpdateProjects={handleUpdateProjects} 
                                                       projects={projects} 
-                                                      // onDelete={handleDelete} 
+                                                      id={data.id}
+                                                      onDelete={handleDelete} 
                                                     /> )
 
   return (
