@@ -14,7 +14,7 @@ function ProjectCard({name, date, user, link, onUpdateProjects, projects, onDele
   // }
 
   // function handleDeleteProjects() {
-  //   fetch(`/projects/${user.id}`, {
+  //   fetch(`/projects/${projects.id}`, {
   //     method: 'DELETE',
   //   })
   //   .then((res) => res.json())

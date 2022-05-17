@@ -12,7 +12,7 @@ function Tony() {
     .then((data) => setUser(data))
   }, []);
 
-console.log(user)
+// console.log(user)
 
 // const projectDisplay = user.projects.map((data) => <TonysCard key={data.id} name={data.name} date={data.date} link={data.link} />)
 
