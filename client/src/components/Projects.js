@@ -6,18 +6,17 @@ import { useNavigate } from 'react-router';
 function Projects({user}) {
 
   const [projects, setProjects] = useState([])
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
+  const [link, setLink] = useState("");
+
+  const history = useNavigate()
 
   useEffect(() => {
     fetch("/projects")
     .then((res) => res.json())
     .then((data) => setProjects(data))
   }, []);
-
-  const [name, setName] = useState("");
-  const [date, setDate] = useState("");
-  const [link, setLink] = useState("");
-
-  const history = useNavigate()
 
   function handleProjectCreate(e) {
     // e.preventDefault();
@@ -42,8 +41,32 @@ function Projects({user}) {
     )
   }
 
+  // function handleUpdateProjects(updatedProject) {
+  //   const updatedProjects = projects.map((data) => {
+  //     if (data.id === updatedProject.id) {
+  //       return updatedProjects;
+  //     }else {
+  //       return projects;
+  //     }
+  //   })
+  // }
 
-  const createProjectCards = projects.map((data) => <ProjectCard key={data.id} name={data.name} date={data.date} user={data.user} link={data.link} /> )
+  // function handleDelete(deletedProject) {
+  //   const updatedProjects = projects.filter(p => p.id !== deletedProject.id);
+  //   setProjects(updatedProjects)
+  // }
+
+
+  const createProjectCards = projects.map((data) => <ProjectCard 
+                                                      key={data.id} 
+                                                      name={data.name} 
+                                                      date={data.date} 
+                                                      user={data.user} 
+                                                      link={data.link} 
+                                                      // onUpdateProjects={handleUpdateProjects} 
+                                                      projects={projects} 
+                                                      // onDelete={handleDelete} 
+                                                    /> )
 
   return (
 
