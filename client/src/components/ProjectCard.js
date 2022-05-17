@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 
-function ProjectCard({name, date, user, link, onUpdateProjects, projects, onDelete }) {
+function ProjectCard({id, name, date, user, link, onUpdateProjects, projects, onDelete }) {
+
+  const history = useNavigate()
 
   // function handleUpdateProjects(e) {
   //   e.preventDefault();
@@ -13,13 +16,14 @@ function ProjectCard({name, date, user, link, onUpdateProjects, projects, onDele
   //   .then((data) => onUpdateProjects(data))
   // }
 
-  // function handleDeleteProjects() {
-  //   fetch(`/projects/${projects.id}`, {
-  //     method: 'DELETE',
-  //   })
-  //   .then((res) => res.json())
-  //   .then((data) => onDelete(data))
-  // }
+  function handleDeleteProjects() {
+    fetch(`/projects/${id}`, {
+      method: 'DELETE',
+    })
+    .then((res) => res.json())
+    .then((data) => onDelete(data))
+    history(0)
+  }
 
   return (
     <div>
@@ -30,7 +34,9 @@ function ProjectCard({name, date, user, link, onUpdateProjects, projects, onDele
       : 
       <a href="#">Links coming soon</a>}
       {/* <button className="edit-btn" onClick={handleUpdateProjects}>📝</button> */}
-      {/* <button className="delete-btn" onClick={handleDeleteProjects}>🗑</button> */}
+      {/* <form onSubmit={history}> */}
+      <button className="delete-btn" onClick={handleDeleteProjects}>🗑</button>
+      {/* </form> */}
     </div>
   )
 }
