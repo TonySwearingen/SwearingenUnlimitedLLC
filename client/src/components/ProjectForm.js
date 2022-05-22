@@ -1,22 +1,21 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router';
 
-function ProjectForm({user}) {
+function ProjectForm({ user, addProject }) {
 
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [link, setLink] = useState("");
 
-  const history = useNavigate()
 
   function handleProjectCreate(e) {
     e.preventDefault();
     console.log(user)
     const formData = {
-      name: name,
-      date: date,
-      user_id: user.id,
-      link: link,
+        name: name,
+        date: date,
+        user_id: user.id,
+        link: link,
+      
     };
     fetch('/projects', {
       method: 'POST',
@@ -24,12 +23,7 @@ function ProjectForm({user}) {
       body: JSON.stringify(formData),
     })
     .then((res) => res.json())
-    .then(
-      setName(""),
-      setDate(""),
-      setLink(""),
-      history('/projects')
-    )
+    .then((data) => addProject(data))
   }
 
   return (
@@ -62,7 +56,7 @@ function ProjectForm({user}) {
             onChange={(e) => setLink(e.target.value)}
           />
         </div>
-        <button type="submit" onSubmit={history('/projects')}>Submit</button>
+        <button type="submit" >Submit</button>
       </form>
     </div>
   )
