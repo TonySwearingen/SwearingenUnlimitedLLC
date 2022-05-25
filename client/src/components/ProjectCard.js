@@ -8,8 +8,6 @@ function ProjectCard({ id, name, date, user, link, onDelete }) {
     })
     .then(() => {
       onDelete(id)
-      // let element = document.getElementById(id);
-      // element.remove();
     })
   }
 

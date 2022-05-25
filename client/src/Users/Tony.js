@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import TonysCard from './TonysCard';
-// import ProjectForm from './ProjectForm';
 
 function Tony() {
 
   const [user, setUser] = useState([]);
   const [projectDisplay, setProjectDisplay] = useState();
-
-  // let projectDisplay = null
 
   useEffect(() => {
     fetch('/users/4')
