@@ -15,7 +15,6 @@ function ProjectForm({ user, addProject }) {
         date: date,
         user_id: user.id,
         link: link,
-      
     };
     fetch('/projects', {
       method: 'POST',
@@ -23,7 +22,12 @@ function ProjectForm({ user, addProject }) {
       body: JSON.stringify(formData),
     })
     .then((res) => res.json())
-    .then((data) => addProject(data))
+    .then((data) => {
+      setName("")
+      setDate("")
+      setLink("")
+      addProject(data)
+    })
   }
 
   return (

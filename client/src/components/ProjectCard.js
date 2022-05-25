@@ -6,12 +6,15 @@ function ProjectCard({ id, name, date, user, link, onDelete }) {
     fetch(`/projects/${id}`, {
       method: 'DELETE',
     })
-    .then((res) => res.json())
-    .then((data) => onDelete(data))
+    .then(() => {
+      onDelete(id)
+      // let element = document.getElementById(id);
+      // element.remove();
+    })
   }
 
   return (
-    <div>
+    <div id={id}>
       <h3>{user.name}</h3>
       <h4>{name}</h4>
       <p>{date}</p>

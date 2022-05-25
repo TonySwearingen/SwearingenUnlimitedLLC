@@ -17,20 +17,22 @@ function Projects({ user }) {
     setProjects(updatedProjects)
   }
 
-  function handleDelete(deletedProject) {
-    const updatedProjects = projects.filter((project) => project.id !== deletedProject.id);
+  function handleDelete(id) {
+    const updatedProjects = projects.filter((project) => project.id !== id);
     setProjects(updatedProjects)
   }
 
-  const createProjectCards = projects.map((data) => <ProjectCard 
-                                                      key={data.id}
-                                                      name={data.name}
-                                                      date={data.date}
-                                                      user={data.user}
-                                                      link={data.link}
-                                                      id={data.id}
-                                                      onDelete={handleDelete}
-                                                    /> )
+  const createProjectCards = projects.map((data) => 
+      <ProjectCard 
+        key={data.id}
+        name={data.name}
+        date={data.date}
+        user={data.user}
+        link={data.link}
+        id={data.id}
+        onDelete={handleDelete}
+      />
+)
 
   return (
 
