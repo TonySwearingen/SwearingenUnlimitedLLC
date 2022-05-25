@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 // import NickisImages from './NickisImages';
 import apophis from '../Assets/apophis.jpg';
 import Blue from '../Assets/Blue.jpg';
@@ -10,11 +10,32 @@ import Valor from '../Assets/Valor.jpg';
 import Zenith from '../Assets/Zenith.jpg';
 import Zephyr from '../Assets/Zephyr.jpg';
 import Zephyr2 from '../Assets/Zephyr2.jpg';
+import NickiCard from './NickiCard';
 // import ProjectForm from './ProjectForm';
 
 
 
-function Nicki({user}) {
+function Nicki() {
+
+  const [user, setUser] = useState([]);
+  const [projectDisplay, setProjectDisplay] = useState();
+
+  useEffect(() => {
+    fetch('/users/1')
+    .then((res) => res.json())
+    .then((data) => {
+      setUser(data)
+      setProjectDisplay(data.projects.map(
+        (el) => 
+          <NickiCard 
+            key={el.id} 
+            name={el.name} 
+            date={el.date} 
+            link={el.link} 
+          />
+      ))
+    })
+  }, []);
 
   return (
     <div>
@@ -24,6 +45,7 @@ function Nicki({user}) {
       <br/>
       <br/>
       {/* <ProjectForm user={user}/> */}
+      {projectDisplay}
       <br/>
       <br/>
       {/* <NickisImages /> */}
