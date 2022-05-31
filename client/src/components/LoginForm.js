@@ -6,7 +6,6 @@ function LoginForm({onLogin}) {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  // const [user, setUser] = useState("");
 
   const history = useNavigate()
 

@@ -67,12 +67,12 @@ function NavBar() {
       >
         Login
       </NavLink >
-      <NavLink
+      {/* <NavLink
         to="/Login"
         style={linkStyles}
       >
         Projects
-      </NavLink >
+      </NavLink > */}
     </>
   )
 }
