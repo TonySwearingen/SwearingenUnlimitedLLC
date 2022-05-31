@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router';
 
-function LoginForm() {
+function LoginForm({onLogin}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState("");
 
   const history = useNavigate()
 
@@ -23,7 +23,7 @@ function LoginForm() {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => {
-          setUser(user);
+          onLogin(user);
         console.log("logged in");
         history('/projects')
       })

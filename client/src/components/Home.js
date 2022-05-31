@@ -15,7 +15,7 @@ import Projects from './Projects'
 
 function Home() {
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
 
   useEffect(() => {
     // auto-login
