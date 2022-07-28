@@ -32,4 +32,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Deployed at:
+
+    https://agile-savannah-66158.herokuapp.com/
